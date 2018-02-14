@@ -1,7 +1,8 @@
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
     var input = process.stdin.read();
-    var node = node.versions;
+    var node = process.version;
+    var LANG = process.env;
     if (input !== null) {
         var instruction = input.toString().trim();
         switch (instruction) {
@@ -10,7 +11,10 @@ process.stdin.on('readable', function() {
             process.exit();
         break;
         case '/node':
-            process.stdout.write('Node version:' node)
+            process.stdout.write('Node version:' + node)
+        	break;
+        case '/lang':
+            process.stdout.write('User system language:' + LANG)
         	break;
         default:
         	process.stdout.write('Wrong instruction!\n');
