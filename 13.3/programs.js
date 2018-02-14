@@ -11,10 +11,10 @@ process.stdin.on('readable', function() {
             process.exit();
         break;
         case '/node':
-            process.stdout.write('Node version:' + node)
+            process.stdout.write('Node version:' + node + '\n')
         	break;
         case '/lang':
-            process.stdout.write('User system language:' + LANG)
+            process.stdout.write('User system language:' + LANG + '\n')
         	break;
         default:
         	process.stdout.write('Wrong instruction!\n');
