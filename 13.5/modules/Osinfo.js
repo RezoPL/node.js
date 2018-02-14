@@ -2,7 +2,7 @@ var os = require('os');
 var time = require('./time');
 var colors = require('colors');
 
-fukction getOSinfo() {
+function getOSinfo() {
     var type = os.type();
     if (type === 'Darwin') {
         type = 'OSX';
@@ -16,7 +16,7 @@ fukction getOSinfo() {
     console.log('System:' .red, type);
     console.log('Release:' .blue, release);
     console.log('CPU model:'. gree, cpu);
-    console.log('Uptime: ~' .yellow, (uptime / 60).toFixed(0), 'min');
+    console.log('Uptime:' .yellow, time.print(uptime));
     console.log('User name:' .grey, userInfo.username);
     console.log('Home dir:' .magenta, userInfo.homedir);
 }
