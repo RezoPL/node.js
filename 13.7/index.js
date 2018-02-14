@@ -8,4 +8,17 @@ fs.stat('./cat.jpg', function(err, stats) {
 
 fs.readFile('./text.txt', 'utf-8', function(err, data) {
     console.log(data);
+    fs.writeFile('./text.txt', 'After save!', function(err) {
+        if (err) throw err;
+        console.log('Zapisano!');
+    });
 });
+fs.readdir('./', function(err, filelist) {
+    if (err) throw err;
+    console.log(filelist);
+
+    fs.writeFile('./filelist.txt', filelist, function(err) {
+        if (err) throw err;
+        console.log('Zapisano')
+    })
+})
